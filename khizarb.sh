@@ -260,3 +260,4 @@ main() {
 }
 
 main "$@"
+DEFAULT_FORMAT=json
