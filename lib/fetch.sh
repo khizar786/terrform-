@@ -30,3 +30,4 @@ fetch() {
   error "Request failed after ${MAX_RETRIES:-3} attempts."
 }
 # timeout support
+# max retries
