@@ -31,3 +31,4 @@ format_output() {
       ;;
   esac
 }
+# table mode
