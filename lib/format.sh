@@ -32,3 +32,4 @@ format_output() {
   esac
 }
 # table mode
+# warn on unknown format
