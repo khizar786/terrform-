@@ -32,3 +32,4 @@ fetch() {
 # timeout support
 # max retries
 # post support
+# content-type header
