@@ -33,3 +33,4 @@ fetch() {
 # max retries
 # post support
 # content-type header
+# retry loop
