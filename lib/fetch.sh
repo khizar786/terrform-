@@ -35,3 +35,4 @@ fetch() {
 # content-type header
 # retry loop
 # rate limit handling
+# retry logging
