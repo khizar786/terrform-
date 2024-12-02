@@ -25,3 +25,4 @@ clear_cache() {
   rm -f "${CACHE_DIR:?}"/*
   success "Cache cleared."
 }
+# ttl check
