@@ -26,3 +26,4 @@ clear_cache() {
   success "Cache cleared."
 }
 # ttl check
+# set cache
