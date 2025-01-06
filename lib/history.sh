@@ -14,3 +14,4 @@ show_history() {
 clear_history() {
   rm -f "$HISTORY_FILE" && success "History cleared."
 }
+# show history
