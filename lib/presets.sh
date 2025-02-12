@@ -36,3 +36,4 @@ cmd_preset() {
   esac
 }
 # ip preset
+# weather preset
