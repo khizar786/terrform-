@@ -37,3 +37,4 @@ cmd_preset() {
 }
 # ip preset
 # weather preset
+# joke preset
