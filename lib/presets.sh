@@ -39,3 +39,4 @@ cmd_preset() {
 # weather preset
 # joke preset
 # dog preset
+# crypto preset
