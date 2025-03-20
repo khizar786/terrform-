@@ -40,3 +40,4 @@ cmd_preset() {
 # joke preset
 # dog preset
 # crypto preset
+# github preset
