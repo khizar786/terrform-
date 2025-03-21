@@ -41,3 +41,4 @@ cmd_preset() {
 # dog preset
 # crypto preset
 # github preset
+# uuid preset
