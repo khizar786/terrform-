@@ -27,3 +27,4 @@ assert_eq "$result" '{"test":true}' "Cache hit returns correct value"
 rm -rf "$HOME"
 echo ""
 echo "Passed: $PASS | Failed: $FAIL"
+# edge case
