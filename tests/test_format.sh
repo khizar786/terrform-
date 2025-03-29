@@ -22,3 +22,4 @@ assert_contains "$result" '"hello"' "json format pretty-prints keys"
 
 echo ""
 echo "Passed: $PASS | Failed: $FAIL"
+# table format test
