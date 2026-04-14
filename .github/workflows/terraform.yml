@@ -1,0 +1,21 @@
+hcl# Add a new private subnet to the existing VPC
+resource "aws_subnet" "private_subnet_2" {
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = "10.0.2.0/24"
+  availability_zone = "us-east-1b"
+
+  tags = {
+    Name = "Private-Subnet-02"
+    Environment = "Production"
+  }
+}
+
+# Update Security Group to allow internal traffic from the new subnet
+resource "aws_security_group_rule" "allow_internal_app" {
+  type              = "ingress"
+  from_port         = 8080
+  to_port           = 8080
+  protocol          = "tcp"
+  cidr_blocks       = [aws_subnet.private_subnet_2.cidr_block]
+  security_group_id = aws_security_group.web_sg.id
+}
