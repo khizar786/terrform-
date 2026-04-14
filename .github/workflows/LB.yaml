@@ -1,0 +1,39 @@
+# 1. Create the Load Balancer
+resource "aws_lb" "web_alb" {
+  name               = "web-server-alb"
+  internal           = false
+  load_balancer_type = "application"
+  security_groups    = [aws_security_group.web_sg.id]
+  subnets            = ["subnet-12345", "subnet-67890"] # Replace with your public subnets
+}
+
+# 2. Define the Target Group
+resource "aws_lb_target_group" "web_tg" {
+  name     = "web-target-group"
+  port     = 80
+  protocol = "HTTP"
+  vpc_id   = "vpc-12345" # Replace with your VPC ID
+}
+
+# 3. Create the Launch Template (Replaces the single EC2 resource)
+resource "aws_launch_template" "web_lt" {
+  name_prefix   = "web-server-lt-"
+  image_id      = "ami-0c55b159cbfafe1f0" # Amazon Linux 2
+  instance_type = "t2.micro"
+
+  vpc_security_group_ids = [aws_security_group.web_sg.id]
+}
+
+# 4. Create the Auto Scaling Group
+resource "aws_autoscaling_group" "web_asg" {
+  min_size            = 1
+  max_size            = 5
+  desired_capacity    = 1
+  target_group_arns   = [aws_lb_target_group.web_tg.arn]
+  vpc_zone_identifier = ["subnet-12345", "subnet-67890"]
+
+  launch_template {
+    id      = aws_launch_template.web_lt.id
+    version = "$Latest"
+  }
+}
